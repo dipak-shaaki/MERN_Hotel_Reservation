@@ -15,7 +15,11 @@ dotenv.config({ path: path.join(__dirname, "config", ".env") });
 
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL, "http://localhost:5173"],
+    origin: [
+      process.env.FRONTEND_URL || "http://localhost:5173",
+      "http://localhost:5173",
+      "http://localhost:4000"
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
@@ -27,7 +31,7 @@ app.use("/api/v1/reservation", reservationRouter);
 app.get("/", (req, res, next) => {
   return res.status(200).json({
     success: true,
-    message: "HELLO WORLD AGAIN"
+    message: "Backend is running on Vercel!"
   })
 })
 
