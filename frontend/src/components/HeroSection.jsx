@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="heroSection" id="heroSection">
       <Navbar />
@@ -16,7 +19,7 @@ const HeroSection = () => {
               sourced from local producers and international markets.
             </p>
             <div className="hero-cta-buttons">
-              <a href="/menu" className="btn primary-btn">Explore Menu</a>
+              <button className="btn primary-btn" onClick={() => navigate('/menu')}>Explore Menu</button>
               <a href="#reservation" className="btn secondary-btn">Book a Table</a>
             </div>
           </div>

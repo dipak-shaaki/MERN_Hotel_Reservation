@@ -11,14 +11,35 @@ const Reservation = () => {
   const [email, setEmail] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
-  const [phone, setPhone] = useState(0);
+  const [phone, setPhone] = useState("");
   const navigate = useNavigate();
 
   const handleReservation = async (e) => {
     e.preventDefault();
+
+    // Validation
+    if (!firstName || !lastName || !email || !date || !time || !phone) {
+      toast.error("Please fill in all fields");
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+
+    // Phone validation
+    const phoneRegex = /^[0-9]{10,15}$/;
+    if (!phoneRegex.test(phone)) {
+      toast.error("Please enter a valid phone number");
+      return;
+    }
+
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/reservation/send",
+        "http://localhost:4000/api/v1/reservation/send",
         { firstName, lastName, email, phone, date, time },
         {
           headers: {
@@ -30,13 +51,13 @@ const Reservation = () => {
       toast.success(data.message);
       setFirstName("");
       setLastName("");
-      setPhone(0);
+      setPhone("");
       setEmail("");
       setTime("");
       setDate("");
       navigate("/success");
     } catch (error) {
-      toast.error(error.response.data.message);
+      toast.error(error.response?.data?.message || "An error occurred. Please try again.");
     }
   };
 
@@ -44,57 +65,72 @@ const Reservation = () => {
     <section className="reservation" id="reservation">
       <div className="container">
         <div className="banner">
-          <img src="/reservation.png" alt="res" />
+          <img src="/breakfast1.png" alt="res" />
         </div>
         <div className="banner">
-          <div className="reservation_form_box">
+          <div className="reservation_form_box enhanced-reservation-form">
             <h1>MAKE A RESERVATION</h1>
             <p>For Further Questions, Please Call</p>
-            <form>
-              <div>
-                <input
-                  type="text"
-                  placeholder="First Name"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                />
-                <input
-                  type="text"
-                  placeholder="Last Name"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                />
+            <form onSubmit={handleReservation}>
+              <div className="form-row">
+                <div className="form-group">
+                  <input
+                    type="text"
+                    placeholder="First Name"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    className="form-input"
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    type="text"
+                    placeholder="Last Name"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    className="form-input"
+                  />
+                </div>
               </div>
-              <div>
-                <input
-                  type="date"
-                  placeholder="Date"
-                  value={date}
-                  onChange={(e) => setDate(e.target.value)}
-                />
-                <input
-                  type="time"
-                  placeholder="Time"
-                  value={time}
-                  onChange={(e) => setTime(e.target.value)}
-                />
+              <div className="form-row">
+                <div className="form-group">
+                  <input
+                    type="date"
+                    value={date}
+                    onChange={(e) => setDate(e.target.value)}
+                    className="form-input"
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    type="time"
+                    value={time}
+                    onChange={(e) => setTime(e.target.value)}
+                    className="form-input"
+                  />
+                </div>
               </div>
-              <div>
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className="email_tag"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <input
-                  type="number"
-                  placeholder="Phone"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                />
+              <div className="form-row">
+                <div className="form-group">
+                  <input
+                    type="email"
+                    placeholder="Email Address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="form-input"
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    type="tel"
+                    placeholder="Phone Number"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    className="form-input"
+                  />
+                </div>
               </div>
-              <button type="submit" onClick={handleReservation}>
+              <button type="submit" className="reserve-button">
                 RESERVE NOW{" "}
                 <span>
                   <HiOutlineArrowNarrowRight />

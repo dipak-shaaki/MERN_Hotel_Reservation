@@ -14,12 +14,13 @@ export const errorMiddleware = (err, req, res, next) => {
     err = new ErrorHandler(message, 400);
   }
 
-
   if (err.name === 'ValidationError') {
-    const validationErrors = Object.values(error.errors).map(err => err.message);
-    return next(new ErrorHandler(validationErrors.join(', '), 400));
+    const validationErrors = Object.values(err.errors).map(error => error.message);
+    return res.status(400).json({
+      success: false,
+      message: validationErrors.join(', '),
+    });
   }
-
 
   return res.status(err.statusCode).json({
     success: false,

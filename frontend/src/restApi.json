@@ -155,21 +155,16 @@
                 },
                 {
                     "id": 3,
-                    "title": "MENU",
-                    "link": "menu"
-                },
-                {
-                    "id": 4,
                     "title": "SERVICES",
                     "link": "qualities"
                 },
                 {
-                    "id": 5,
+                    "id": 4,
                     "title": "TEAM",
                     "link": "team"
                 },
                 {
-                    "id": 6,
+                    "id": 5,
                     "title": "RESERVATION",
                     "link": "reservation"
                 }
