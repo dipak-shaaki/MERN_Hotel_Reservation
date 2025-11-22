@@ -1,0 +1,179 @@
+{
+    "data": [
+        {
+            "ourQualities": [
+                {
+                    "id": 1,
+                    "image": "./quality_food.svg",
+                    "title": "QUALITY FOOD",
+                    "description": "We serve only the finest quality ingredients, sourced from local producers and prepared with meticulous attention to detail."
+                },
+                {
+                    "id": 2,
+                    "image": "./super_taste.svg",
+                    "title": "SUPER TASTE",
+                    "description": "Experience exceptional flavors with every bite. Our chefs create dishes that delight your palate with perfectly balanced seasonings and fresh ingredients."
+                },
+                {
+                    "id": 3,
+                    "image": "./fast_delivery.svg",
+                    "title": "FAST DELIVERY",
+                    "description": "Enjoy prompt and reliable delivery service, ensuring your food arrives fresh and hot right to your doorstep."
+                }
+            ],
+            "dishes": [
+                {
+                    "id": 1,
+                    "image": "./dinner1.jpeg",
+                    "title": "HERB-CRUSTED LAMB CHOPS",
+                    "category": "Dinner"
+                },
+                {
+                    "id": 2,
+                    "image": "./dinner2.png",
+                    "title": "PAN-SEARED ATLANTIC SALMON",
+                    "category": "Dinner"
+                },
+                {
+                    "id": 3,
+                    "image": "./breakfast1.png",
+                    "title": "SMOKED SALMON BENEDICT",
+                    "category": "Breakfast"
+                },
+                {
+                    "id": 4,
+                    "image": "./dinner3.png",
+                    "title": "TRUFFLE MUSHROOM RISOTTO",
+                    "category": "Dinner"
+                },
+                {
+                    "id": 5,
+                    "image": "./lunch1.png",
+                    "title": "PREMIUM ANGUS BEEF BURGER",
+                    "category": "Lunch"
+                },
+                {
+                    "id": 6,
+                    "image": "./dinner4.png",
+                    "title": "CREAMY LOBSTER BISQUE",
+                    "category": "Dinner"
+                },
+                {
+                    "id": 7,
+                    "image": "./dinner5.png",
+                    "title": "TRADITIONAL ITALIAN LASAGNA",
+                    "category": "Dinner"
+                },
+                {
+                    "id": 8,
+                    "image": "./dinner6.png",
+                    "title": "MEDITERRANEAN SEA BASS",
+                    "category": "Dinner"
+                }
+            ],
+            "team": [
+                {
+                    "id": 1,
+                    "image": "/dinner1.jpeg",
+                    "name": "ALEXANDER MARTINEZ",
+                    "designation": "Executive Chef & Owner"
+                },
+                {
+                    "id": 2,
+                    "image": "/dinner3.png",
+                    "name": "DAVID WONG",
+                    "designation": "Pastry Chef"
+                },
+                {
+                    "id": 3,
+                    "image": "/dinner5.png",
+                    "name": "MICHAEL O'CONNOR",
+                    "designation": "Sous Chef"
+                },
+                {
+                    "id": 4,
+                    "image": "/dinner6.png",
+                    "name": "JAMES WILSON",
+                    "designation": "Culinary Director"
+                }
+            ],
+            "testimonials": [
+                {
+                    "id": 1,
+                    "image": "./review1.png",
+                    "description": "Morbi nulla nec dui lacus, in. Libero in pretium metus massa. Sodales dignissim vitae mauris varius faucibus. Eleifend dui, non laoreet ac luctus facilisis diam. Enim scelerisque vel at id viverra tellus.",
+                    "rating": 4,
+                    "userName": "Jane Cooper"
+                },
+                {
+                    "id": 2,
+                    "image": "./review2.png",
+                    "description": "Tortor vel nunc netus pharetra enim, enim dolor mauris in. Sit nam fringilla in egestas. Libero condimentum quis in vulputate adipiscing venenatis augue. Venenatis faucibus.",
+                    "rating": 4.5,
+                    "userName": "Esther Howard"
+                },
+                {
+                    "id": 3,
+                    "image": "./review3.png",
+                    "description": "Tortor vel nunc netus pharetra enim, enim dolor mauris in. Sit nam fringilla in egestas. Libero condimentum quis in vulputate adipiscing venenatis augue. Venenatis faucibus.",
+                    "rating": 5,
+                    "userName": "Guy Hawkins"
+                }
+            ],
+            "who_we_are": [
+                {
+                    "id": 1,
+                    "number": "5",
+                    "title": "Luxury Restaurants"
+                },
+                {
+                    "id": 2,
+                    "number": "25",
+                    "title": "Expert Chefs"
+                },
+                {
+                    "id": 3,
+                    "number": "15",
+                    "title": "Years Of Excellence"
+                },
+                {
+                    "id": 4,
+                    "number": "150",
+                    "title": "Signature Dishes"
+                }
+            ],
+            "navbarLinks": [
+                {
+                    "id": 1,
+                    "title": "HOME",
+                    "link": "heroSection"
+                },
+                {
+                    "id": 2,
+                    "title": "ABOUT US",
+                    "link": "about"
+                },
+                {
+                    "id": 3,
+                    "title": "MENU",
+                    "link": "menu"
+                },
+                {
+                    "id": 4,
+                    "title": "SERVICES",
+                    "link": "qualities"
+                },
+                {
+                    "id": 5,
+                    "title": "TEAM",
+                    "link": "team"
+                },
+                {
+                    "id": 6,
+                    "title": "RESERVATION",
+                    "link": "reservation"
+                }
+            ]
+        }
+    ]
+}
