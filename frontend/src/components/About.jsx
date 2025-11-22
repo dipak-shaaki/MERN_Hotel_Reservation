@@ -15,12 +15,7 @@ const About = () => {
             <p className="mid">
               Welcome to Golden Palace Hotel, where centuries-old culinary traditions blend seamlessly with contemporary innovation. Our award-winning chefs source the finest local and international ingredients to create extraordinary dishes that celebrate both Nepali heritage and global flavors. From intimate dinners to grand celebrations, our dedicated team ensures every guest experiences the pinnacle of fine dining in an atmosphere of refined elegance.
             </p>
-            <Link to={"/"}>
-              Explore Menu{" "}
-              <span>
-                <HiOutlineArrowRight />
-              </span>
-            </Link>
+           
           </div>
           <div className="banner">
             <img src="about.png" alt="about" />

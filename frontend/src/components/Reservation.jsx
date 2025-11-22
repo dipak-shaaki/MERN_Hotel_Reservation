@@ -65,10 +65,10 @@ const Reservation = () => {
     <section className="reservation" id="reservation">
       <div className="container">
         <div className="banner">
-          <img src="/breakfast1.png" alt="res" />
+          <img src="/breakfast1.png" alt="delicious breakfast" />
         </div>
         <div className="banner">
-          <div className="reservation_form_box enhanced-reservation-form">
+          <div className="enhanced-reservation-form">
             <h1>MAKE A RESERVATION</h1>
             <p>For Further Questions, Please Call</p>
             <form onSubmit={handleReservation}>

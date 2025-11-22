@@ -7,6 +7,42 @@ const Navbar = () => {
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
 
+  const handleLinkClick = (e, link, title) => {
+    e.preventDefault();
+
+    // If it's the MENU link, navigate to menu page
+    if (title === "MENU") {
+      navigate('/menu');
+      return;
+    }
+
+    // If it's the RESERVATION link, scroll to reservation section
+    if (title === "RESERVATION") {
+      // First navigate to home page if we're not already there
+      if (window.location.pathname !== '/') {
+        navigate('/', { state: { scrollToReservation: true } });
+      } else {
+        // If we're already on home page, scroll to reservation
+        const element = document.getElementById(link);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+      return;
+    }
+
+    // For all other links, navigate to home page
+    if (window.location.pathname !== '/') {
+      navigate('/');
+    } else {
+      // If we're already on home page, scroll to section
+      const element = document.getElementById(link);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <>
       <nav>
@@ -16,34 +52,12 @@ const Navbar = () => {
             {data[0].navbarLinks.map((element) => (
               <a
                 key={element.id}
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (element.title === "RESERVATION") {
-                    // For scroll links
-                    const elementId = element.link;
-                    const targetElement = document.getElementById(elementId);
-                    if (targetElement) {
-                      targetElement.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  } else {
-                    // For other scroll links
-                    const elementId = element.link;
-                    const targetElement = document.getElementById(elementId);
-                    if (targetElement) {
-                      targetElement.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }
-                }}
+                onClick={(e) => handleLinkClick(e, element.link, element.title)}
               >
                 {element.title}
               </a>
             ))}
-            <a onClick={(e) => {
-              e.preventDefault();
-              navigate('/menu');
-            }}>
-              MENU
-            </a>
+          
           </div>
           <button className="menuBtn" onClick={() => navigate('/menu')}>OUR MENU</button>
         </div>

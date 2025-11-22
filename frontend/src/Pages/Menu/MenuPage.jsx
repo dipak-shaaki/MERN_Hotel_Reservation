@@ -115,40 +115,42 @@ const MenuPage = () => {
 
     return (
         <>
-            <Navbar />
-            <section className="menu-page-section">
+            <section className="heroSection">
+                <Navbar />
                 <div className="container">
-                    <div className="menu-header">
-                        <h1 className="heading">OUR EXCLUSIVE MENU</h1>
-                        <p>Discover our carefully curated selection of exquisite dishes crafted by our master chefs</p>
-                    </div>
-                    <div className="menu-categories">
-                        {categories.map((category, index) => (
-                            <button
-                                key={index}
-                                className={`category-btn ${activeCategory === category ? 'active' : ''}`}
-                                onClick={() => setActiveCategory(category)}
-                            >
-                                {category}
-                            </button>
-                        ))}
-                    </div>
-                    <div className="menu-items-container">
-                        {filteredItems.map(item => (
-                            <div className="menu-item-card" key={item.id}>
-                                <div className="menu-item-image">
-                                    <img src={item.image} alt={item.name} />
-                                </div>
-                                <div className="menu-item-details">
-                                    <div className="menu-item-header">
-                                        <h3 className="menu-item-name">{item.name}</h3>
-                                        <span className="menu-item-price">${item.price.toFixed(2)}</span>
+                    <div className="menu-content-wrapper">
+                        <div className="menu-header">
+                            <h1 className="heading">OUR EXCLUSIVE MENU</h1>
+                            <p>Discover our carefully curated selection of exquisite dishes crafted by our master chefs</p>
+                        </div>
+                        <div className="menu-categories">
+                            {categories.map((category, index) => (
+                                <button
+                                    key={index}
+                                    className={`category-btn ${activeCategory === category ? 'active' : ''}`}
+                                    onClick={() => setActiveCategory(category)}
+                                >
+                                    {category}
+                                </button>
+                            ))}
+                        </div>
+                        <div className="menu-items-container">
+                            {filteredItems.map(item => (
+                                <div className="menu-item-card" key={item.id}>
+                                    <div className="menu-item-image">
+                                        <img src={item.image} alt={item.name} />
                                     </div>
-                                    <p className="menu-item-description">{item.description}</p>
-                                    <button className="add-to-cart-btn">Add to Cart</button>
+                                    <div className="menu-item-details">
+                                        <div className="menu-item-header">
+                                            <h3 className="menu-item-name">{item.name}</h3>
+                                            <span className="menu-item-price">${item.price.toFixed(2)}</span>
+                                        </div>
+                                        <p className="menu-item-description">{item.description}</p>
+                                        <button className="add-to-cart-btn">Add to Cart</button>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>

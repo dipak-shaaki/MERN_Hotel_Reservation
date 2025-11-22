@@ -13,10 +13,9 @@ const Footer = () => {
         </div>
         <div className="banner">
           <div className="left">
-            <p>Developed By GOLDEN PALACE TEAM</p>
           </div>
           <div className="right">
-            <p>All Rights Reserved By Golden Palace Hotel.</p>
+            <p>All Rights Reserved @2025 Golden Palace Hotel.</p>
           </div>
         </div>
       </div>
