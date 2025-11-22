@@ -1,12 +1,17 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
+import path from "path";
+import { fileURLToPath } from "url";
 import { errorMiddleware } from "./middlewares/error.js";
 import reservationRouter from "./routes/reservationRoute.js";
 import { dbConnection } from "./database/dbConnection.js";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const app = express();
-dotenv.config({ path: "C:\\Users\\Dipak\\Desktop\\MERN_STACK_RESTAURANT_RESERVATION-main\\backend\\config\\.env" });
+dotenv.config({ path: path.join(__dirname, "config", ".env") });
 
 app.use(
   cors({
