@@ -74,25 +74,25 @@
             "team": [
                 {
                     "id": 1,
-                    "image": "/dinner1.jpeg",
+                    "image": "/team_member_1.png",
                     "name": "ALEXANDER MARTINEZ",
                     "designation": "Executive Chef & Owner"
                 },
                 {
                     "id": 2,
-                    "image": "/dinner3.png",
+                    "image": "/team_member_2.png",
                     "name": "DAVID WONG",
                     "designation": "Pastry Chef"
                 },
                 {
                     "id": 3,
-                    "image": "/dinner5.png",
+                    "image": "/team_member_3.png",
                     "name": "MICHAEL O'CONNOR",
                     "designation": "Sous Chef"
                 },
                 {
                     "id": 4,
-                    "image": "/dinner6.png",
+                    "image": "/team_member_4.png",
                     "name": "JAMES WILSON",
                     "designation": "Culinary Director"
                 }
